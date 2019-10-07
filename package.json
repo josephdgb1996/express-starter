@@ -4,16 +4,12 @@
     "description": "medica api",
     "main": "./src/server",
     "scripts": {
-        "start:dev": "cross-env NODE_ENV=develoment nodemon ./src/server",
-        "start:prod": "cross-env NODE_ENV=production nodemon ./src/server"
+        "dev": "cross-env NODE_ENV=develoment nodemon ./src/server",
+        "prod": "cross-env NODE_ENV=production nodemon ./src/server"
     },
     "author": "Joseph Garcia",
     "license": "ISC",
     "devDependencies": {
-        "@babel/cli": "^7.6.2",
-        "@babel/core": "^7.6.2",
-        "@babel/node": "^7.6.2",
-        "@babel/preset-env": "^7.6.2",
         "cross-env": "^6.0.3",
         "nodemon": "^1.19.2"
     },
