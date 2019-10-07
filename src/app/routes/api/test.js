@@ -1,9 +1,8 @@
 const express = require("express");
-
 const app = express.Router();
 
-app.get('/get', function(req, res) {
-    res.status(200).json({ ok: true });
-});
+const controller = require('../../controllers/test');
+
+app.get('/get', controller.get);
 
 module.exports = app;
