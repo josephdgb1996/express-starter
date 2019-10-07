@@ -1,4 +1,4 @@
-if(process.env.NODE_ENV == 'production') require('dotenv').config({ path: './src/.env' });
+if (process.env.NODE_ENV == 'production') require('dotenv').config({ path: './src/.env' });
 
 const SERVER_PORT = process.env.SERVER_PORT || 3000;
 const SERVER_HOST = process.env.SERVER_HOST || "127.0.0.1";
@@ -10,13 +10,13 @@ const http = require('http');
 const cors = require("cors");
 
 const app = express();
+const router = require("./app/routes");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
-const Router = require("./app/routes");
-new Router(app);
+app.use("/api", router);
 
 http.createServer(app).listen(SERVER_PORT, SERVER_HOST, () => {
     console.log("Server is now running in " + process.env.NODE_ENV);

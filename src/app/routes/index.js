@@ -1,9 +1,9 @@
-class Router {
-    constructor(app) {
-        let test = require('./api/test');
+const express = require("express");
+const app = express.Router();
 
-        app.use('/api/test', test);
-    }
-}
+const test = require('./api/test');
 
-module.exports = Router;
+app.use('/test', test);
+
+
+module.exports = app;
